@@ -1,0 +1,18 @@
+runtime: nodejs18
+
+env_variables:
+  DB_HOST: "34.168.108.20"
+  DB_USER: "ex10_user"
+  DB_PASSWORD: "S(]s7,%uPu\"orE3"
+  DB_NAME: "ex10_db"
+  PORT: "8080"
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 10
+  target_cpu_utilization: 0.6
+
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
