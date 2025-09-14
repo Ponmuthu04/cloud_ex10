@@ -4,7 +4,7 @@ const submitBtn = document.getElementById("submitBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
-const apiUrl = "http://localhost:8080/users";
+const apiUrl = "/users";
 
 let editingUserId = null;
 

@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backend
+    container_name: crud-backend
+    environment:
+      DB_HOST: 34.168.108.20
+      DB_USER: ex10_user
+      DB_PASSWORD: S(]s7,%uPu"\orE3
+      DB_NAME: ex10_db
+      PORT: 8080
+    ports:
+      - "8080:8080"
+    networks:
+      - crud-network
+
+  frontend:
+    build: ./frontend
+    container_name: crud-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - crud-network
+
+networks:
+  crud-network:
+    driver: bridge
